@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class PeoplesTest {
+public class GenericTests {
     private String url;
     @BeforeClass
     public void Setup(){

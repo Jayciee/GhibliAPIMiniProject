@@ -1,0 +1,5 @@
+Feature: Check that the BaseURL works
+Scenario
+  Given a correct baseUrl
+  When I try to get a response
+  Then I get a 200 status code
