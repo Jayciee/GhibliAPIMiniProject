@@ -7,13 +7,13 @@ import org.testng.Assert;
 
 public class Generic {
     Resources resources = new Resources();
-    String url;
+    public String url;
     Response response;
-    @Given("I have the baseURL")
+
+    @Given("the correct url")
     public void iHaveTheBaseURL() {
         url = resources.getBaseUrl();
     }
-
     @When("I run the endpoint")
     public void iRunTheEndpoint() {
         response = RestAssured.get(url);
