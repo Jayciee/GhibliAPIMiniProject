@@ -5,6 +5,8 @@ Feature: Using the people endpoint should return the correct people
     Then I should get the corresponding <gender>
     Examples:
     |name        |gender|
-    |Ashitaka    |male  |
-    |Haku        |male  |
-    |Captain Dola|female|
+    |Ashitaka    |Male  |
+    |Haku        |Male  |
+    |Captain Dola|Female|
+
+

@@ -1,8 +1,15 @@
+import groovy.json.JsonParser;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.messages.internal.com.fasterxml.jackson.databind.util.JSONPObject;
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import org.json.JSONObject;
+import org.testng.Assert;
+
+import static io.restassured.path.json.JsonPath.*;
 
 public class PeopleStepDef {
     private Resources resources = new Resources();
@@ -23,6 +30,9 @@ public class PeopleStepDef {
 
     @Then("^I should get the corresponding (.*)$")
     public void iShouldGetTheCorrespondingGender(String gender) {
+        JsonPath jsonPath = new JsonPath(response.getBody().asString());
         System.out.println(response.getBody().asString());
+        String responseGender = jsonPath.getString("gender[0]");
+        Assert.assertEquals(responseGender,gender);
     }
 }
