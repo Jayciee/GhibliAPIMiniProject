@@ -1,4 +1,3 @@
-import io.cucumber.java.en.Given;
 
 public class Resources {
     private String baseUrl = "https://ghibliapi.herokuapp.com";
